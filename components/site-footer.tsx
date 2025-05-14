@@ -11,21 +11,35 @@ export default function SiteFooter() {
               <p className="text-sm text-stone-400 mb-6">50 Years of Japanese Garden Mastery – From Hiroshima, Japan</p>
             </div>
 
-            <div className="flex flex-col gap-3">
-              <div className="flex items-center gap-3">
+            <div className="flex flex-col gap-4">
+              <a
+                href="mailto:private@teraoengei.jp"
+                className="flex items-center gap-3 hover:text-white transition-colors duration-300"
+                aria-label="Email us at private@teraoengei.jp"
+              >
                 <Mail className="h-5 w-5" />
                 <span>private@teraoengei.jp</span>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-3">
+              <a
+                href="tel:+81-82-xxx-xxxx"
+                className="flex items-center gap-3 hover:text-white transition-colors duration-300"
+                aria-label="Call us at +81-82-xxx-xxxx"
+              >
                 <Phone className="h-5 w-5" />
                 <span>+81-82-xxx-xxxx</span>
-              </div>
+              </a>
 
-              <div className="flex items-center gap-3">
+              <a
+                href="https://instagram.com/japanesegarden_terao"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 hover:text-white transition-colors duration-300"
+                aria-label="Follow us on Instagram @japanesegarden_terao"
+              >
                 <Instagram className="h-5 w-5" />
                 <span>@japanesegarden_terao</span>
-              </div>
+              </a>
             </div>
           </div>
 

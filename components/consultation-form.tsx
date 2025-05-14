@@ -1,7 +1,6 @@
 "use client"
 
 import type React from "react"
-
 import { useState } from "react"
 import { ChevronRight } from "lucide-react"
 
@@ -29,6 +28,16 @@ export default function ConsultationForm() {
   if (isSubmitted) {
     return (
       <div className="bg-stone-800 border border-stone-700 p-10 text-center">
+        <svg
+          className="w-16 h-16 text-green-500 mx-auto mb-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+        </svg>
         <h3 className="text-2xl font-light mb-4">Thank you for your interest</h3>
         <p className="text-stone-300">
           We have received your consultation request. A member of our team will contact you within 48 hours to arrange
@@ -43,33 +52,37 @@ export default function ConsultationForm() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
         <div className="space-y-2">
           <Label htmlFor="fullName" className="text-stone-300">
-            Full Name
+            Full Name <span className="text-amber-500">*</span>
           </Label>
           <Input
             id="fullName"
+            name="fullName"
             required
-            className="bg-stone-700 border-stone-600 text-white focus:border-stone-500 focus:ring-stone-500"
+            aria-required="true"
+            className="bg-stone-700 border-stone-600 text-white focus:border-amber-500 focus:ring-amber-500 h-12"
           />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="email" className="text-stone-300">
-            Email Address
+            Email Address <span className="text-amber-500">*</span>
           </Label>
           <Input
             id="email"
+            name="email"
             type="email"
             required
-            className="bg-stone-700 border-stone-600 text-white focus:border-stone-500 focus:ring-stone-500"
+            aria-required="true"
+            className="bg-stone-700 border-stone-600 text-white focus:border-amber-500 focus:ring-amber-500 h-12"
           />
         </div>
 
         <div className="space-y-2">
           <Label htmlFor="country" className="text-stone-300">
-            Country
+            Country <span className="text-amber-500">*</span>
           </Label>
-          <Select>
-            <SelectTrigger className="bg-stone-700 border-stone-600 text-white focus:border-stone-500 focus:ring-stone-500">
+          <Select name="country" required>
+            <SelectTrigger className="bg-stone-700 border-stone-600 text-white focus:border-amber-500 focus:ring-amber-500 h-12">
               <SelectValue placeholder="Select country" />
             </SelectTrigger>
             <SelectContent>
@@ -86,10 +99,10 @@ export default function ConsultationForm() {
 
         <div className="space-y-2">
           <Label htmlFor="propertyType" className="text-stone-300">
-            Property Type
+            Property Type <span className="text-amber-500">*</span>
           </Label>
-          <Select>
-            <SelectTrigger className="bg-stone-700 border-stone-600 text-white focus:border-stone-500 focus:ring-stone-500">
+          <Select name="propertyType" required>
+            <SelectTrigger className="bg-stone-700 border-stone-600 text-white focus:border-amber-500 focus:ring-amber-500 h-12">
               <SelectValue placeholder="Select property type" />
             </SelectTrigger>
             <SelectContent>
@@ -104,10 +117,10 @@ export default function ConsultationForm() {
 
         <div className="space-y-2 md:col-span-2">
           <Label htmlFor="timeframe" className="text-stone-300">
-            Preferred Timeframe
+            Preferred Timeframe <span className="text-amber-500">*</span>
           </Label>
-          <Select>
-            <SelectTrigger className="bg-stone-700 border-stone-600 text-white focus:border-stone-500 focus:ring-stone-500">
+          <Select name="timeframe" required>
+            <SelectTrigger className="bg-stone-700 border-stone-600 text-white focus:border-amber-500 focus:ring-amber-500 h-12">
               <SelectValue placeholder="Select timeframe" />
             </SelectTrigger>
             <SelectContent>
@@ -126,8 +139,9 @@ export default function ConsultationForm() {
           </Label>
           <Textarea
             id="message"
+            name="message"
             rows={4}
-            className="bg-stone-700 border-stone-600 text-white focus:border-stone-500 focus:ring-stone-500"
+            className="bg-stone-700 border-stone-600 text-white focus:border-amber-500 focus:ring-amber-500"
             placeholder="Please share any specific requirements or questions you may have."
           />
         </div>
@@ -137,7 +151,7 @@ export default function ConsultationForm() {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="bg-stone-100 hover:bg-white text-stone-900 rounded-none px-8 py-6 text-base tracking-widest transition-all duration-300"
+          className="bg-amber-700 hover:bg-amber-600 text-white rounded-none px-8 py-6 text-base tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl"
         >
           {isSubmitting ? "Submitting..." : "Apply for Consultation"}
           <ChevronRight className="ml-2 h-4 w-4" />

@@ -14,12 +14,14 @@ const montserrat = Montserrat({
   subsets: ["latin"],
   variable: "--font-montserrat",
   display: "swap",
+  weight: ["300", "400", "500", "600", "700"],
 })
 
 export const metadata: Metadata = {
   title: "Terao Engei Doboku | Bespoke Japanese Gardens",
   description:
     "Luxury Japanese garden design and construction by master artisans from Hiroshima, Japan. Serving high-end clients worldwide.",
+  keywords: "Japanese garden, landscape design, zen garden, luxury garden, Hiroshima, artisan, bespoke garden",
     generator: 'v0.dev'
 }
 

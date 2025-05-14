@@ -22,15 +22,15 @@
     --muted: 60 4% 95%;
     --muted-foreground: 25 5% 45%;
 
-    --accent: 60 4% 90%;
-    --accent-foreground: 24 10% 10%;
+    --accent: 36 60% 40%;
+    --accent-foreground: 60 9% 98%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 60 9% 98%;
 
     --border: 20 5% 90%;
     --input: 20 5% 90%;
-    --ring: 24 5% 64%;
+    --ring: 36 60% 40%;
 
     --radius: 0.5rem;
   }
@@ -54,7 +54,7 @@
     --muted: 12 6% 15%;
     --muted-foreground: 24 5% 64%;
 
-    --accent: 12 6% 15%;
+    --accent: 36 60% 40%;
     --accent-foreground: 60 9% 98%;
 
     --destructive: 0 62% 30%;
@@ -62,7 +62,7 @@
 
     --border: 12 6% 15%;
     --input: 12 6% 15%;
-    --ring: 24 5% 64%;
+    --ring: 36 60% 40%;
   }
 }
 
@@ -105,4 +105,41 @@
 
 .font-sans {
   font-family: var(--font-montserrat), sans-serif;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Improved focus styles for accessibility */
+*:focus-visible {
+  @apply outline-2 outline-offset-2 outline-amber-600;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-stone-200;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-stone-400 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-stone-500;
+}
+
+/* Reduce motion if user prefers */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
